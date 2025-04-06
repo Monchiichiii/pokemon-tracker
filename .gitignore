@@ -1,0 +1,15 @@
+# Ignore XAMPP-related config
+*.log
+*.tmp
+
+# Ignore credentials or sensitive configs
+config/config.php
+
+# Ignore OS or editor-specific files
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Ignore vendor folders if you use Composer or npm in future
+vendor/
+node_modules/

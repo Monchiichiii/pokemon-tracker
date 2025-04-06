@@ -1,0 +1,327 @@
+
+/* ===== Base ===== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #fceff9, #e0f7fa);
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #ff5c8d;
+}
+
+/* ===== Header & Navbar ===== */
+/* ===== Navbar & Header Refinement ===== */
+header {
+    background: linear-gradient(to right, #ff8a80, #ff5252);
+    padding: 1rem 2rem;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+/* Logo */
+.nav-logo-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.logo-img {
+    height: 32px;
+    margin-right: 0.5rem;
+}
+
+.logo-text {
+    font-size: 1.2rem;
+}
+
+/* Center nav (Pokéball buttons) */
+.nav-center {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-grow: 1;
+    padding-top: 0.5rem;
+}
+
+/* User info */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.95rem;
+    color: white;
+}
+
+.user-info strong {
+    color: #fff;
+    font-weight: 600;
+}
+
+.logout-btn {
+    background-color: white;
+    color: #ef5350;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    border: none;
+}
+
+.logout-btn:hover {
+    background-color: #ffeaea;
+    color: #c62828;
+}
+
+
+/* === Pokéball Nav Buttons === */
+.pokeball-btn {
+    padding: 6px 14px;
+    border-radius: 30px;
+    background: linear-gradient(to bottom, #ffffff 50%, #ef5350 50%);
+    border: 2px solid #333;
+    color: black;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-decoration: none;
+    position: relative;
+    box-shadow: 0 3px #aaa;
+    transition: all 0.2s ease;
+}
+
+
+.pokeball-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== Home Welcome ===== */
+main.welcome-wrapper {
+    min-height: calc(100vh - 130px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.welcome-card {
+    background: white;
+    padding: 2rem 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login-btn {
+    display: inline-block;
+    background-color: #4285f4;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 1rem;
+    transition: background-color 0.2s ease;
+}
+
+.login-btn:hover {
+    background-color: #357ae8;
+}
+
+/* ===== Cards ===== */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.card {
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.card img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.card h4 {
+    margin: 0.5rem 0 0.2rem;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.card p {
+    margin: 0.2rem 0;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.card button,
+.remove-btn {
+    margin-top: 0.5rem;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    background: linear-gradient(to right, #ff80ab, #ffb6b9);
+    color: white;
+    font-weight: bold;
+}
+
+.card button:hover,
+.remove-btn:hover {
+    background: linear-gradient(to right, #ff5c8d, #ffa1a5);
+}
+
+.remove-btn {
+    background: linear-gradient(to right, #b0bec5, #90a4ae);
+}
+
+.already-saved {
+    color: #66bb6a;
+    font-weight: bold;
+    margin-top: 0.6rem;
+}
+
+/* ===== Search Bar ===== */
+form[method="GET"] {
+    max-width: 1200px;
+    margin: 1.5rem auto 0;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+form[method="GET"] input,
+form[method="GET"] select,
+form[method="GET"] button {
+    padding: 8px;
+    font-size: 0.9rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+form[method="GET"] input {
+    background: #fff;
+}
+
+form[method="GET"] button {
+    background: linear-gradient(to right, #2196f3, #64b5f6);
+    color: white;
+    font-weight: bold;
+    border: none;
+}
+
+form[method="GET"] button:hover {
+    background: linear-gradient(to right, #1976d2, #42a5f5);
+}
+
+form[method="GET"] select {
+    min-width: 140px;
+    padding: 8px;
+}
+
+/* ===== Pagination Buttons ===== */
+.page-btn {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px 16px;
+    background: linear-gradient(to right, #ff80ab, #ffb6b9);
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.page-btn:hover {
+    background: linear-gradient(to right, #ff5c8d, #ffa1a5);
+}
+
+/* ===== Image Modal ===== */
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.image-modal img {
+    display: block;
+    margin: auto;
+    max-width: 95vw;
+    max-height: 95vh;
+}
+
+.image-modal .close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* ===== Footer ===== */
+footer {
+    height: 60px;
+    padding: 1rem;
+    background: linear-gradient(to right, #ff8a80, #ff5252);
+    color: white;
+    text-align: center;
+}
