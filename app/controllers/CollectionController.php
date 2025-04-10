@@ -23,7 +23,7 @@ class CollectionController {
 
             $apiKey = '61a65de2-37c0-4afc-a39b-66bf7364bfe2';
 
-            // ✅ Fetch card data from API
+            //this retrieves the card data from the Pokemon TCG API
             foreach ($cardIds as $cardId) {
                 $url = "https://api.pokemontcg.io/v2/cards/$cardId";
                 $ch = curl_init();
@@ -41,20 +41,19 @@ class CollectionController {
                 }
             }
 
-            // ✅ Debug log (view in PHP error log or console)
             error_log("[DEBUG] Total cards fetched: " . count($cards));
 
             $selectedSet = $_GET['set_id'] ?? null;
 
             if ($selectedSet) {
-                // 🔍 Filter cards by selected set
+                //this wil filter the cards based on the set
                 $cards = array_filter($cards, function($card) use ($selectedSet) {
                     return ($card['set']['id'] ?? '') === $selectedSet;
                 });
 
                 error_log("[DEBUG] Filtered cards for set $selectedSet: " . count($cards));
             } else {
-                // ✅ Group by set and count
+                //this groups by set and count
                 foreach ($cards as $card) {
                     $setId = $card['set']['id'] ?? 'unknown';
 

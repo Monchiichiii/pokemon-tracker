@@ -1,5 +1,7 @@
 <?php
 
+
+//gets the users information and stores into the database
 class User {
     private $db;
 

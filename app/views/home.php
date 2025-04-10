@@ -17,7 +17,7 @@
 <?php include __DIR__ . '/../../includes/footer.php'; ?>
 
 <style>
-/* === Animated Emoji Wave === */
+/* emoji wave animation */
 .waving {
     display: inline-block;
     animation: wave 1.5s infinite;
@@ -33,7 +33,7 @@
     100% { transform: rotate(0deg); }
 }
 
-/* === Cute Home Styles === */
+/* home style format */
 .home-container {
     display: flex;
     justify-content: center;

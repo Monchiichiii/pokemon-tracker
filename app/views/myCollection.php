@@ -16,7 +16,6 @@
     <p style="text-align: center; margin-top: 2rem;">You don’t have any cards in this set yet.</p>
 
 <?php elseif (isset($_GET['set_id'])): ?>
-    <!-- Back to all sets + total count -->
     <p style="text-align: center;">
         <a href="index.php?action=myCollection">← Back to All Sets</a>
     </p>
@@ -24,7 +23,6 @@
         Total Cards in Set: <?= count($cards) ?>
     </p>
 
-    <!-- Show cards from selected set -->
     <div class="card-grid">
         <?php foreach ($cards as $card): ?>
             <?php
@@ -55,7 +53,6 @@
     </div>
 
 <?php else: ?>
-    <!-- Set overview with logos and progress -->
     <div class="card-grid">
         <?php foreach ($sets as $set): ?>
             <div class="card">

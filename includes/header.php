@@ -10,7 +10,7 @@
     <header>
         <div class="navbar">
 
-            <!-- Logo -->
+
             <div class="nav-logo-wrapper">
                 <a href="index.php?action=home" class="nav-logo">
                     <img src="assets/images/pika.png" alt="Pokémon Tracker Logo" class="logo-img">
@@ -18,14 +18,14 @@
                 </a>
             </div>
 
-            <!-- Navigation Links -->
+            
             <nav class="nav-center">
                 <a class="pokeball-btn" href="index.php?action=home">Home</a>
                 <a class="pokeball-btn" href="index.php?action=browse">Browse</a>
                 <a class="pokeball-btn" href="index.php?action=myCollection">Collection</a>
             </nav>
 
-            <!-- User Info & Logout -->
+            
             <div class="nav-right">
                 <?php if (isset($_SESSION['user'])): ?>
                     <div class="user-info">

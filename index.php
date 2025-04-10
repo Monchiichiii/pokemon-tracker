@@ -6,7 +6,7 @@ require_once 'app/controllers/CardController.php';
 require_once 'app/controllers/CollectionController.php';
 require_once 'app/controllers/HomeController.php';
 
-// Generate Google login URL for header or views
+// shows google login url so the user can login
 $login_url = "https://accounts.google.com/o/oauth2/v2/auth?" . http_build_query([
     "scope" => "email profile",
     "access_type" => "online",
@@ -15,15 +15,16 @@ $login_url = "https://accounts.google.com/o/oauth2/v2/auth?" . http_build_query(
     "state" => "pass-through-value",
     "redirect_uri" => GOOGLE_REDIRECT_URI,
     "client_id" => GOOGLE_CLIENT_ID,
-    "prompt" => "select_account"  // ← forces Google to show account chooser
+    "prompt" => "select_account" 
 ]);
 
 
 $action = $_GET['action'] ?? 'home';
 
 switch ($action) {
+    //shows all the cards
     case 'browse':
-        (new CardController())->index(); // Show all cards
+        (new CardController())->index();
         break;
 
     case 'addCard':
@@ -33,7 +34,7 @@ switch ($action) {
     case 'removeCard':
         (new CardController())->removeFromCollection();
         break;
-
+        //shows the users collections
     case 'myCollection':
         (new CollectionController())->showMyCollection();
         break;
@@ -45,6 +46,7 @@ switch ($action) {
 
     case 'home':
     default:
-        (new HomeController())->index(); // Show homepage/dashboard
+    //shows dashboard
+        (new HomeController())->index(); 
         break;
 }

@@ -1,5 +1,6 @@
 <?php
 
+//cards and Pokemon TCG API
 class Card {
     private $apiBase = "https://api.pokemontcg.io/v2/cards";
     private $apiKey = "61a65de2-37c0-4afc-a39b-66bf7364bfe2"; 
@@ -41,6 +42,7 @@ class Card {
         return $data['data'] ?? [];
     }
 
+    //retrieves all sets
     public function getAllSets() {
         $url = "https://api.pokemontcg.io/v2/sets?orderBy=releaseDate";
 

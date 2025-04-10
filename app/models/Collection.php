@@ -2,12 +2,13 @@
 
 class Collection {
     private $pdo;
-    private $apiKey = '61a65de2-37c0-4afc-a39b-66bf7364bfe2'; // Replace with your real API key
+    private $apiKey = '61a65de2-37c0-4afc-a39b-66bf7364bfe2';
 
     public function __construct(PDO $pdo) {
         $this->pdo = $pdo;
     }
 
+    //retrieves the cards id for the users collection
     public function getCardIdsForUser($userId) {
         $stmt = $this->pdo->prepare("SELECT card_id FROM user_collection WHERE user_id = ?");
         $stmt->execute([$userId]);

@@ -6,16 +6,15 @@ require_once 'config/config.php';
 require_once 'app/models/User.php';
 
 try {
-    // Step 1: Connect to the database
+    //goes to the database
     $pdo = new PDO(DB_DSN, DB_USER, DB_PASS);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Step 2: Check for OAuth code
     if (!isset($_GET['code'])) {
         throw new Exception("No code provided from Google OAuth.");
     }
 
-    // Step 3: Exchange code for access token
+    //access token
     $tokenUrl = "https://oauth2.googleapis.com/token";
     $data = [
         "code" => $_GET['code'],
@@ -46,7 +45,7 @@ try {
 
     $access_token = $tokenData['access_token'];
 
-    // Step 4: Retrieve user info from Google
+    //gets users google information
     $userInfo = file_get_contents("https://www.googleapis.com/oauth2/v2/userinfo?access_token={$access_token}");
     if (!$userInfo) {
         throw new Exception("Failed to fetch user info from Google.");
@@ -57,16 +56,16 @@ try {
         throw new Exception("Incomplete user info: " . $userInfo);
     }
 
-    // Step 5: Insert or update user in DB
+    //updates the users information into the database
     $userModel = new User($pdo);
     $userModel->findOrCreateUser(
-        $user['id'],            // google_id
-        $user['name'],          // username
+        $user['id'],            
+        $user['name'],          
         $user['email'],
-        $user['picture'] ?? ''  // profile_pic
+        $user['picture'] ?? '' 
     );
 
-    // Step 6: Get local user ID
+    //grabs the users id
     $stmt = $pdo->prepare("SELECT id FROM users WHERE google_id = ?");
     $stmt->execute([$user['id']]);
     $dbUser = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -75,11 +74,11 @@ try {
         throw new Exception("Failed to retrieve user after insert.");
     }
 
-    // Step 7: Save to session
+    //saves
     $_SESSION['user'] = $user;
     $_SESSION['user_id'] = $dbUser['id'];
 
-    // Step 8: Redirect to app
+    //goes back to the dashboard
     header("Location: index.php");
     exit;
 
