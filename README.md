@@ -3,6 +3,7 @@
 This project is a web-based Pokémon Trading Card Game collection tracker. It allows users to browse, search, and manage their personal collection of Pokémon cards using live data from the Pokémon TCG API.
 
 We used ChatGPT in order to get the skeletal structure using the MVC pattern. This was the structure it gave us:
+
 pokemontracker_website/
 ├── app/                        # MVC application core
 │   ├── controllers/            # Handles requests and logic
@@ -22,10 +23,10 @@ pokemontracker_website/
 ├── config/                     # Configuration files
 │   ├── config.php              # Database credentials
 │   └── google_config.php       # Google OAuth setup
-├── includes/                    
+├── includes/                   # Shared page elements
 │   ├── header.php              # Navigation and top layout
 │   └── footer.php              # Footer and modal
-├── index.php                   
+├── index.php                   # Main entry and routing
 ├── oauth.php                   # Handles Google OAuth login
 ├── logout.php                  # Ends session and logs user out
 
