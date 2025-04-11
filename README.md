@@ -43,4 +43,6 @@ pokemontracker_website/
 
 # Website Run Time
 Due to the website being locally hosted it would just require the PC to be on so it can be live. Therefore the website will be live from 10am for users to interact until midnight everyday. Enjoy tracking your collection!! :)
+http://pokemontracker.org/pokemontracker_website/
+
 
