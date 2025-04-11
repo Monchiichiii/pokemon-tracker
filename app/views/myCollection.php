@@ -2,12 +2,7 @@
 
 <h2>My Pokémon Collection</h2>
 
-<pre style="max-height: 300px; overflow-y: auto; font-size: 0.8rem;">
-<?= 'GET[set_id]: ' . ($_GET['set_id'] ?? 'none') . "\n" ?>
-<?= 'Total $cards: ' . (isset($cards) ? count($cards) : 'unset') . "\n" ?>
-<?= 'Total $sets: ' . (isset($sets) ? count($sets) : 'unset') . "\n" ?>
-<?= 'First card name (if any): ' . ($cards[0]['name'] ?? 'none') . "\n" ?>
-</pre>
+
 
 <?php if (!isset($_GET['set_id']) && empty($sets)): ?>
     <p style="text-align: center; margin-top: 2rem;">You haven’t added any cards yet.</p>
