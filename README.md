@@ -33,7 +33,6 @@ pokemontracker_website/
 
 
 
-
 - Front-end framework: HTML with PHP files
 - Back-end framework: PHP with MySQLi
 - Database: MySQL
