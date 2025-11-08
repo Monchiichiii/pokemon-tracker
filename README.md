@@ -31,9 +31,6 @@ pokemontracker_website/
 ├── oauth.php                   # Handles Google OAuth login
 ├── logout.php                  # Ends session and logs user out
 ```
-- We also had an error where GET[set_id]: none was showing up on our Collection page. Put this error into ChatGPT in order to find out where it could be coming from and it was able to tell us it was either on myCollection.php or CollectionController.php. We were able to then pinpoint that the error came from myCollection.php where a block of code forgot to get removed while we were debugging.
-
-
 
 - Front-end framework: HTML with PHP files
 - Back-end framework: PHP with MySQLi
